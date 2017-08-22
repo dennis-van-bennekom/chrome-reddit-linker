@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "Reddit Linker",
+  "description": "This extension formats a link on reddit when pasted",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.reddit.com/*"],
+      "js": ["jquery.js", "content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["event.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "activeTab",
+    "<all_urls>"
+  ]
+}
